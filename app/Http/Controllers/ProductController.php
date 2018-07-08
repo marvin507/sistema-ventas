@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
+use App\Category;
 use App\Http\Requests\RequestCreateProduct;
 class ProductController extends Controller
 {
@@ -16,7 +17,7 @@ class ProductController extends Controller
     }
     public function showProducts(){
 
-      $productos =  Product::orderBy('id', 'DESC')->get();
+      $productos =  Product::with('category')->orderBy('id', 'DESC')->get();
       return $productos;
     }
 
@@ -35,5 +36,9 @@ class ProductController extends Controller
     public function deleteProduct($id){
 
       Product::findOrFail($id)->delete();
+    }
+    public function test(){
+      $productos = Product::all();
+      return view('product.test',compact('productos'));
     }
 }

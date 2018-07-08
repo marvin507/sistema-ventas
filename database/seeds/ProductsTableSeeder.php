@@ -13,7 +13,7 @@ class ProductsTableSeeder extends Seeder
     {
         for ($i=1; $i<=20 ; $i++) {
           Product::create([
-            'nombre'    =>  "medicina{$i}",
+            'nombre'    =>  "producto{$i}",
             'codigo'    =>  "33454{$i}",
             'cantidad'  =>  "{$i}",
             'precio'    =>  "{$i}.10"

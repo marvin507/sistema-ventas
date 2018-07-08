@@ -47571,6 +47571,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -47586,7 +47600,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         nombre: '',
         codigo: '',
         cantidad: '',
-        precio: ''
+        precio: '',
+        category_id: ''
 
       },
       errors: [],
@@ -47594,7 +47609,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         nombre: '',
         codigo: '',
         cantidad: '',
-        precio: ''
+        precio: '',
+        category_id: ''
+
       } //fin return
     };
   },
@@ -47613,7 +47630,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       axios.post('api/productos', this.newProduct).then(function (response) {
         $('#crear').modal('hide');
         _this2.getProduct();
-        _this2.newProduct = { nombre: '', codigo: '', cantidad: '', precio: '' };
+        _this2.newProduct = { nombre: '', codigo: '', cantidad: '', precio: '', category_id: '' };
         __WEBPACK_IMPORTED_MODULE_0_toastr___default.a.success("datos guardados satisfactoriamente");
       }).catch(function (error) {
         return _this2.errors = error.response.data;
@@ -47630,7 +47647,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       axios.put(url, this.fillProduct).then(function (response) {
         $("#editar").modal('hide');
         _this3.getProduct();
-        _this3.fillProduct = { nombre: '', codigo: '', cantidad: '', precio: '' };
+        _this3.fillProduct = { nombre: '', codigo: '', cantidad: '', precio: '', category_id: '' };
         __WEBPACK_IMPORTED_MODULE_0_toastr___default.a.success("datos actualizados exitosamente");
       }).catch(function (error) {
         return _this3.errors = error.response.data;
@@ -48149,7 +48166,9 @@ var render = function() {
     _c("div", { staticClass: "row justify-content-center" }, [
       _c("div", { staticClass: "col-md-12" }, [
         _c("div", { staticClass: "card card-default" }, [
-          _c("div", { staticClass: "card-header" }, [_vm._v("Productos")]),
+          _c("div", { staticClass: "card-header" }, [
+            _vm._v("Productos\n          ")
+          ]),
           _vm._v(" "),
           _c("div", { staticClass: "card-body" }, [
             _vm._m(0),
@@ -48169,6 +48188,8 @@ var render = function() {
                       _c("td", [_vm._v(_vm._s(product.cantidad))]),
                       _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(product.precio))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(product.category.name))]),
                       _vm._v(" "),
                       _c("td", [
                         _c("div", { staticClass: "btn-group" }, [
@@ -48448,6 +48469,61 @@ var render = function() {
                     ],
                     2
                   )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "col-md-4 control-label",
+                      attrs: { for: "selectbasic" }
+                    },
+                    [_vm._v("Select Basic")]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-12" }, [
+                    _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.newProduct.category_id,
+                            expression: "newProduct.category_id"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: { id: "selectbasic" },
+                        on: {
+                          change: function($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function(o) {
+                                return o.selected
+                              })
+                              .map(function(o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.$set(
+                              _vm.newProduct,
+                              "category_id",
+                              $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            )
+                          }
+                        }
+                      },
+                      _vm._l(_vm.products, function(product) {
+                        return _c(
+                          "option",
+                          { domProps: { value: product.category.id } },
+                          [_vm._v(_vm._s(product.category.name))]
+                        )
+                      })
+                    )
+                  ])
                 ])
               ]),
               _vm._v(" "),
@@ -48699,7 +48775,9 @@ var render = function() {
           ])
         ])
       ]
-    )
+    ),
+    _vm._v(" "),
+    _c("pre")
   ])
 }
 var staticRenderFns = [
@@ -48718,7 +48796,7 @@ var staticRenderFns = [
         }
       },
       [
-        _vm._v("Nuevo Producto\n\t\t\t\t\t\t"),
+        _vm._v("Nuevo Producto\n              "),
         _c("i", { staticClass: "fas fa-plus" })
       ]
     )
@@ -48736,6 +48814,8 @@ var staticRenderFns = [
         _c("th", [_vm._v("Cantidad")]),
         _vm._v(" "),
         _c("th", [_vm._v("Precio")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Categoría")]),
         _vm._v(" "),
         _c("th", { attrs: { width: "10%" } }, [_vm._v("Aciones")])
       ])

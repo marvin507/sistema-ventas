@@ -4,6 +4,8 @@
 Route::get('panel/productos', 'ProductController@view')->name('productos.index');
 //recurso que consume vue.js
 Route::get('panel/api/productos', 'ProductController@showProducts');
+//recurso que consume vue.js
+Route::get('panel/productos/test', 'ProductController@test');
 //guardar producto
 Route::post('panel/api/productos', 'ProductController@storeProduct');
 //actualizar producto

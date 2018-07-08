@@ -8,8 +8,8 @@ class Category extends Model
 {
     protected $fillable = ['name'];
 
-    public function products(){
-
-      return $this->hasMany(Product::class);
+    public function Products(){
+      return $this->hasOne(Product::class);
     }
+
 }
