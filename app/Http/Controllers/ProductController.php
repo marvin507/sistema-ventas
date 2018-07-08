@@ -6,6 +6,10 @@ use App\Product;
 use App\Http\Requests\RequestCreateProduct;
 class ProductController extends Controller
 {
+  public function __construct()
+  {
+      $this->middleware('auth');
+  }
     public function view(){
 
       return view('product.index');
