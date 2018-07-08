@@ -47571,31 +47571,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -48177,22 +48152,11 @@ var render = function() {
           _c("div", { staticClass: "card-header" }, [_vm._v("Productos")]),
           _vm._v(" "),
           _c("div", { staticClass: "card-body" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-primary",
-                attrs: {
-                  type: "button",
-                  "data-toggle": "modal",
-                  "data-target": "#crear"
-                }
-              },
-              [_vm._v("Nuevo Producto")]
-            ),
+            _vm._m(0),
             _vm._v(" "),
             _c("div", { staticClass: "table-responsive" }, [
               _c("table", { staticClass: "table table-hover mt-2" }, [
-                _vm._m(0),
+                _vm._m(1),
                 _vm._v(" "),
                 _c(
                   "tbody",
@@ -48208,10 +48172,13 @@ var render = function() {
                       _vm._v(" "),
                       _c("td", [
                         _c("div", { staticClass: "btn-group" }, [
+                          _vm._m(2, true),
+                          _vm._v(" "),
                           _c(
                             "button",
                             {
-                              staticClass: "btn btn-warning btn-sm mr-1",
+                              staticClass:
+                                "btn btn-warning btn-sm btn-cuadrado mr-2",
                               attrs: { type: "button" },
                               on: {
                                 click: function($event) {
@@ -48219,13 +48186,13 @@ var render = function() {
                                 }
                               }
                             },
-                            [_vm._v("Editar")]
+                            [_c("i", { staticClass: "fas fa-pencil-alt" })]
                           ),
                           _vm._v(" "),
                           _c(
                             "button",
                             {
-                              staticClass: "btn btn-danger btn-sm",
+                              staticClass: "btn btn-danger btn-sm btn-cuadrado",
                               attrs: { type: "button" },
                               on: {
                                 click: function($event) {
@@ -48234,7 +48201,7 @@ var render = function() {
                                 }
                               }
                             },
-                            [_vm._v("Eliminar")]
+                            [_c("i", { staticClass: "fas fa-trash-alt" })]
                           )
                         ])
                       ])
@@ -48264,7 +48231,7 @@ var render = function() {
         _c("div", { staticClass: "modal fade", attrs: { id: "crear" } }, [
           _c("div", { staticClass: "modal-dialog" }, [
             _c("div", { staticClass: "modal-content" }, [
-              _vm._m(1),
+              _vm._m(3),
               _vm._v(" "),
               _c("div", { staticClass: "modal-body" }, [
                 _c("div", { staticClass: "form-group" }, [
@@ -48312,7 +48279,7 @@ var render = function() {
                       _vm._v(" "),
                       _vm._l(_vm.errors, function(error) {
                         return _c("span", {
-                          staticClass: "help is-danger",
+                          staticClass: "text-danger",
                           domProps: { textContent: _vm._s(error.nombre) }
                         })
                       })
@@ -48366,7 +48333,7 @@ var render = function() {
                       _vm._v(" "),
                       _vm._l(_vm.errors, function(error) {
                         return _c("span", {
-                          staticClass: "help is-danger",
+                          staticClass: "text-danger",
                           domProps: { textContent: _vm._s(error.codigo) }
                         })
                       })
@@ -48420,7 +48387,7 @@ var render = function() {
                       _vm._v(" "),
                       _vm._l(_vm.errors, function(error) {
                         return _c("span", {
-                          staticClass: "help is-danger",
+                          staticClass: "text-danger",
                           domProps: { textContent: _vm._s(error.cantidad) }
                         })
                       })
@@ -48474,7 +48441,7 @@ var render = function() {
                       _vm._v(" "),
                       _vm._l(_vm.errors, function(error) {
                         return _c("span", {
-                          staticClass: "help is-danger",
+                          staticClass: "text-danger",
                           domProps: { textContent: _vm._s(error.precio) }
                         })
                       })
@@ -48484,7 +48451,7 @@ var render = function() {
                 ])
               ]),
               _vm._v(" "),
-              _vm._m(2)
+              _vm._m(4)
             ])
           ])
         ])
@@ -48507,7 +48474,7 @@ var render = function() {
         _c("div", { staticClass: "modal fade", attrs: { id: "editar" } }, [
           _c("div", { staticClass: "modal-dialog" }, [
             _c("div", { staticClass: "modal-content" }, [
-              _vm._m(3),
+              _vm._m(5),
               _vm._v(" "),
               _c("div", { staticClass: "modal-body" }, [
                 _c("div", { staticClass: "form-group" }, [
@@ -48555,7 +48522,7 @@ var render = function() {
                       _vm._v(" "),
                       _vm._l(_vm.errors, function(error) {
                         return _c("span", {
-                          staticClass: "help is-danger",
+                          staticClass: "text-danger",
                           domProps: { textContent: _vm._s(error.nombre) }
                         })
                       })
@@ -48609,7 +48576,7 @@ var render = function() {
                       _vm._v(" "),
                       _vm._l(_vm.errors, function(error) {
                         return _c("span", {
-                          staticClass: "help is-danger",
+                          staticClass: "text-danger",
                           domProps: { textContent: _vm._s(error.codigo) }
                         })
                       })
@@ -48663,7 +48630,7 @@ var render = function() {
                       _vm._v(" "),
                       _vm._l(_vm.errors, function(error) {
                         return _c("span", {
-                          staticClass: "help is-danger",
+                          staticClass: "text-danger",
                           domProps: { textContent: _vm._s(error.cantidad) }
                         })
                       })
@@ -48717,7 +48684,7 @@ var render = function() {
                       _vm._v(" "),
                       _vm._l(_vm.errors, function(error) {
                         return _c("span", {
-                          staticClass: "help is-danger",
+                          staticClass: "text-danger",
                           domProps: { textContent: _vm._s(error.precio) }
                         })
                       })
@@ -48727,7 +48694,7 @@ var render = function() {
                 ])
               ]),
               _vm._v(" "),
-              _vm._m(4)
+              _vm._m(6)
             ])
           ])
         ])
@@ -48740,19 +48707,52 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "btn btn-primary btn-cuadrado",
+        attrs: {
+          type: "button",
+          "data-toggle": "modal",
+          "data-target": "#crear"
+        }
+      },
+      [
+        _vm._v("Nuevo Producto\n\t\t\t\t\t\t"),
+        _c("i", { staticClass: "fas fa-plus" })
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Nombre")]),
+        _c("th", [_vm._v("Nombre")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Código")]),
+        _c("th", [_vm._v("Código")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Cantidad")]),
+        _c("th", [_vm._v("Cantidad")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Precio")]),
+        _c("th", [_vm._v("Precio")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Aciones")])
+        _c("th", { attrs: { width: "10%" } }, [_vm._v("Aciones")])
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "btn btn-info btn-sm btn-cuadrado mr-2",
+        attrs: { type: "button" }
+      },
+      [_c("i", { staticClass: "fas fa-eye" })]
+    )
   },
   function() {
     var _vm = this
@@ -48778,7 +48778,10 @@ var staticRenderFns = [
     return _c("div", { staticClass: "modal-footer" }, [
       _c(
         "button",
-        { staticClass: "btn btn-primary", attrs: { type: "submit" } },
+        {
+          staticClass: "btn btn-primary btn-cuadrado",
+          attrs: { type: "submit" }
+        },
         [_vm._v("Guardar")]
       )
     ])
@@ -48807,7 +48810,10 @@ var staticRenderFns = [
     return _c("div", { staticClass: "modal-footer" }, [
       _c(
         "button",
-        { staticClass: "btn btn-success", attrs: { type: "submit" } },
+        {
+          staticClass: "btn btn-success btn-cuadrado",
+          attrs: { type: "submit" }
+        },
         [_vm._v("Actualizar")]
       )
     ])

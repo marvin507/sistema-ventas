@@ -27,7 +27,7 @@ class RequestCreateProduct extends FormRequest
             'nombre'    =>  'required',
             'codigo'    =>  'required',
             'cantidad'  =>  'required|integer',
-            'precio'    =>  'required|integer'
+            'precio'    =>  'required|numeric'
         ];
     }
 }

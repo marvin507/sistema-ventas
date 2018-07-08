@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);/*!
+@import url(https://fonts.google.com/specimen/Open+Sans?selection.family=Open+Sans);@import url(https://use.fontawesome.com/releases/v5.1.0/css/all.css);/*!
  * Bootstrap v4.1.1 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
  * Copyright 2011-2018 Twitter, Inc.
@@ -10683,5 +10683,9 @@ button.toast-close-button {
   background-color: #fff;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.btn-cuadrado {
+  border-radius: 0px;
 }
 

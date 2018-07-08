@@ -18,7 +18,7 @@ class CreateProductsTable extends Migration
             $table->string('nombre');
             $table->string('codigo');
             $table->integer('cantidad');
-            $table->integer('precio');
+            $table->double('precio', 8, 2);
             $table->timestamps();
         });
     }

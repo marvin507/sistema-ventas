@@ -11,8 +11,13 @@ class ProductsTableSeeder extends Seeder
      */
     public function run()
     {
-        Product::create([
-          'name' => 'panadol',
-        ]);
+        for ($i=1; $i<=20 ; $i++) {
+          Product::create([
+            'nombre'    =>  "medicina{$i}",
+            'codigo'    =>  "33454{$i}",
+            'cantidad'  =>  "{$i}",
+            'precio'    =>  "{$i}.10"
+          ]);
+        }
     }
 }
