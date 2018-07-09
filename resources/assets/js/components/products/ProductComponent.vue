@@ -191,7 +191,11 @@
       <!-- Modal body -->
       <div class="modal-body">
 
-
+        {{viewProduct.nombre}}
+        {{viewProduct.codigo}}
+        {{viewProduct.cantidad}}
+        {{viewProduct.precio}}
+        {{viewProduct.category}}
 
       </div>
 
