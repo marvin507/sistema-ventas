@@ -47912,6 +47912,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -47941,7 +47948,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         precio: '',
         category_id: ''
       },
-      viewProduct: [] //fin return
+      viewProduct: [],
+      buscar: '' //fin return
     };
   },
 
@@ -48009,6 +48017,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       var url = "api/categorias";
       axios.get(url).then(function (response) {
         _this6.categorias = response.data;
+      });
+    }
+  },
+  computed: {
+    buscarProducto: function buscarProducto() {
+      var _this7 = this;
+
+      //retornamos los products filtrados
+      return this.products.filter(function (product) {
+        return product.nombre.toLowerCase().match(_this7.buscar);
       });
     }
   }
@@ -48519,13 +48537,39 @@ var render = function() {
           _c("div", { staticClass: "card-body" }, [
             _vm._m(0),
             _vm._v(" "),
+            _c("div", { staticClass: "form-group float-right" }, [
+              _c("div", { staticClass: "col-md-12" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.buscar,
+                      expression: "buscar"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { placeholder: "buscar por nombre", type: "text" },
+                  domProps: { value: _vm.buscar },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.buscar = $event.target.value
+                    }
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
             _c("div", { staticClass: "table-responsive" }, [
               _c("table", { staticClass: "table table-hover mt-2" }, [
                 _vm._m(1),
                 _vm._v(" "),
                 _c(
                   "tbody",
-                  _vm._l(_vm.products, function(product) {
+                  _vm._l(_vm.buscarProducto, function(product) {
                     return _c("tr", [
                       _c("td", [_vm._v(_vm._s(product.nombre))]),
                       _vm._v(" "),

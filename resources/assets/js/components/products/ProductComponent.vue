@@ -9,6 +9,13 @@
             <button type="button" class="btn btn-primary btn-cuadrado" data-toggle="modal" data-target="#crear">Nuevo Producto
               <i class="fas fa-plus"></i>
             </button>
+            <!-- Search input-->
+<div class="form-group float-right">
+  <div class="col-md-12">
+    <input v-model="buscar" placeholder="buscar por nombre" class="form-control" type="text">
+
+  </div>
+</div>
             <div class="table-responsive">
               <table class="table table-hover mt-2">
                 <thead>
@@ -22,7 +29,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr v-for='product in products'>
+                  <tr v-for='product in buscarProducto'>
                     <td>{{ product.nombre }}</td>
                     <td>{{ product.codigo }}</td>
                     <td>{{ product.cantidad }}</td>
@@ -239,7 +246,8 @@ import toastr from 'toastr'
               precio:'',
               category_id:''
             },
-            viewProduct:[]
+            viewProduct:[],
+            buscar:''
 
           }//fin return
         },
@@ -293,6 +301,12 @@ import toastr from 'toastr'
             axios.get(url).then(response=>{
               this.categorias = response.data
             })
+          }
+        },
+        computed:{
+          buscarProducto(){
+            //retornamos los products filtrados
+            return this.products.filter((product)=>product.nombre.toLowerCase().match(this.buscar));
           }
         }
     }
