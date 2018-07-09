@@ -12,7 +12,14 @@ Route::post('panel/api/productos', 'ProductController@storeProduct');
 Route::put('panel/api/productos/{producto}', 'ProductController@updateProduct');
 //borrar producto
 Route::delete('panel/api/productos/{producto}', 'ProductController@deleteProduct');
+//borrar producto
+Route::get('panel/api/productos/{producto}', 'ProductController@showProduct');
+/***********************************************************************************/
+//recurso que consume vue.js
+Route::get('panel/api/categorias', 'CategoryProduct@showCategories');
 
+
+/***********************************************************************************/
 // Authentication Routes...
 Route::get('/', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('/', 'Auth\LoginController@login');

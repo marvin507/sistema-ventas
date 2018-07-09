@@ -37,6 +37,11 @@ class ProductController extends Controller
 
       Product::findOrFail($id)->delete();
     }
+    public function showProduct($id){
+
+      $producto = Product::with("category")->findOrFail($id);
+      return $producto;
+    }
     public function test(){
       $productos = Product::all();
       return view('product.test',compact('productos'));
