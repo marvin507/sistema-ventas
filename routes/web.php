@@ -15,9 +15,18 @@ Route::delete('panel/api/productos/{producto}', 'ProductController@deleteProduct
 //borrar producto
 Route::get('panel/api/productos/{producto}', 'ProductController@showProduct');
 /***********************************************************************************/
+
+/***********************************************************************************/
+//rutas categorias
+Route::get('panel/categorias', 'CategoryProduct@view')->name('categorias.index');
 //recurso que consume vue.js
 Route::get('panel/api/categorias', 'CategoryProduct@showCategories');
-
+//guardar producto
+Route::post('panel/api/categorias', 'CategoryProduct@storeProduct');
+//actualizar producto
+Route::put('panel/api/categorias/{categoria}', 'CategoryProduct@updateCategory');
+//borrar categoria
+Route::delete('panel/api/categorias/{categoria}', 'CategoryProduct@deleteCategory');
 
 /***********************************************************************************/
 // Authentication Routes...
